@@ -14,7 +14,7 @@
 		private void 	Fill()
 
 	Fields:
-		private	boolean	bJokers = false;// are Jokers included in the deck?
+		private	int		nJokers;		// number of jokers in the deck?
 		private Card[]	aryStack;		// the ordered list of cards
 		private Card[]	aryDeck;		// the shuffled list of cards
 		private	int		nCardsLeft = 0;	// the number of cards left in the deck
@@ -26,12 +26,12 @@ public class Deck
 /*
  *	Deck constructor
  */
-	public Deck(boolean bShuffle, boolean jokers)
+	public Deck(boolean bShuffle, int numJokers)
 	{
-		bJokers = jokers;
+		nJokers = numJokers;
 		
-		aryDeck = new Card[54];
-		aryStack = new Card[54];
+		aryDeck = new Card[52 + numJokers];
+		aryStack = new Card[52 + numJokers];
 
 		Fill();
 
@@ -52,10 +52,7 @@ public class Deck
 		Card	cardStorage;
 		int		nDeckSize;
 
-		if (bJokers)
-			nDeckSize = 54;
-		else
-			nDeckSize = 52;
+		nDeckSize = 52 + nJokers;
 
 		for (n = 0; n < 5; n++)
 		{
@@ -78,10 +75,7 @@ public class Deck
  */
 	public void Collect()
 	{
-		if (bJokers)
-			nCardsLeft = 54;
-		else
-			nCardsLeft = 52;
+		nCardsLeft = 52 + nJokers;;
 	}
 
 /*
@@ -94,10 +88,7 @@ public class Deck
 		Card	topCard;
 		int		nDeckSize;
 
-		if (bJokers)
-			nDeckSize = 54;
-		else
-			nDeckSize = 52;
+		nDeckSize = 52 + nJokers;
 
 		if (nCardsLeft <= 0)
 			return(null);
@@ -130,10 +121,7 @@ public class Deck
 		int		i;	
 		int		nDeckSize;
 
-		if (bJokers)
-			nDeckSize = 54;
-		else
-			nDeckSize = 52;
+		nDeckSize = 52 + nJokers;
 
 		str = nCardsLeft + " Cards Left:  ";
 
@@ -163,24 +151,20 @@ public class Deck
 				index++;
 			}
 
-		if (bJokers)
+		for (index = 0; index < nJokers; index++)
 		{
-			aryStack[52] = new Card(Card.JOKER, Card.JOKER);
-			aryDeck[52] = aryStack[52];
-
-			aryStack[53] = new Card(Card.JOKER, Card.JOKER);
-			aryDeck[53] = aryStack[53];
-
+			aryStack[52 + index] = new Card(Card.JOKER, Card.JOKER);
+			aryDeck[52 + index] = aryStack[52 + index];
 			nCardsLeft = 54;
 		}
-		else
-			nCardsLeft = 52;
+		
+		nCardsLeft = 52 + nJokers;
 	}
 
 /*
  *	fields
  */
-	private	boolean	bJokers = false;// are Jokers included in the deck?
+	private	int		nJokers = 0;	// are Jokers included in the deck?
 	private Card[]	aryStack;		// the ordered list of cards
 	private Card[]	aryDeck;		// the shuffled list of cards
 	private	int		nCardsLeft = 0;	// the number of cards left in the deck
@@ -196,7 +180,7 @@ public class Deck
 		Card	cardCard;
 		Card[]	aryCards;
 
-		deck = new Deck(true, true);
+		deck = new Deck(true, 100);
 
 		aryCards = new Card[5];
 
