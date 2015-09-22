@@ -20,7 +20,7 @@ public class JokerPoker
 		PokerSlots	slots;
 		int			nAccount = 1000;
 		boolean		bQuit = false;
-		int			nLastBet = 10;
+		int			nLastBet = 100;
 		int			nBet = 0;
 		Integer		oBet;
 		String		prompt;
