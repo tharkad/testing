@@ -231,43 +231,43 @@ public class PokerSlots
 				break;
 
 			case kPair:
-				nValue = 1;
+				nValue = 10;
 				break;
 
 			case kTwoPair:
-				nValue = 2;
+				nValue = 20;
 				break;
 
 			case kThreeOfAKind:
-				nValue = 3;
-				break;
-
-			case kStraight:
-				nValue = 5;
-				break;
-
-			case kFlush:
-				nValue = 8;
-				break;
-
-			case kFullHouse:
-				nValue = 10;
-				break;						  
-
-			case kStraightFlush:
 				nValue = 30;
 				break;
 
-			case kRoyalFlush:
-				nValue = 40;
-				break;
-
-			case kFourOfAKind:
+			case kStraight:
 				nValue = 50;
 				break;
 
-			case kFiveOfAKind:
+			case kFlush:
+				nValue = 80;
+				break;
+
+			case kFullHouse:
 				nValue = 100;
+				break;						  
+
+			case kStraightFlush:
+				nValue = 300;
+				break;
+
+			case kRoyalFlush:
+				nValue = 400;
+				break;
+
+			case kFourOfAKind:
+				nValue = 500;
+				break;
+
+			case kFiveOfAKind:
+				nValue = 1000;
 				break;
 		}
 
