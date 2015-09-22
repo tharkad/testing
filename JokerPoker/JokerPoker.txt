@@ -1,0 +1,54 @@
+JokerPoker
+
+Mike Houser
+9/18/98
+
+A "Poker Machine" application.
+
+This is my first Java application.  It is a console app I'm using to cement my 
+knowledge of the basic language before I move on the the graphics library.
+
+------
+Classes
+------
+
+Card - A generic card class.  (Jokers allowed!!!)
+
+Deck - A generic deck class.
+
+PokerSlots - A class that handles the "slots", that is, the cards that are displayed.
+	It also handles the scoring logic and the "hold cards" game interaction.
+	This class owns the one and only Deck.
+
+JokerPoker - The main app.  Instantiates the PokerSlots object.  Handles 
+	user interaction through the console.	There will be an nAccount
+	variable to keep the amount of money the player has.
+
+
+------
+Interaction Spec
+------
+
+Welcome to JokerPoker!
+The game is 5 card draw.  You may draw up to 5 cards each hand.
+Enter h at anytime for a payout list.
+
+Here's $1000.  Enjoy the game.
+
+// game loop starts here
+
+You have (nAccount)
+Place your bet [10] / or last bet
+
+-- hand display
+
+Pick cards to hold by entering their slot number (e.g. 134)
+or leave blank to draw [draw]
+
+-- repeat hand displays until they draw
+
+-- hand display with new hand
+-- Hand type
+-- if winner announce winnings
+
+// repeat
