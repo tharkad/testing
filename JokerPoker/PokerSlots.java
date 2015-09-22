@@ -65,7 +65,7 @@ public class PokerSlots
 		aryHand = new Card[5];
 		aryHold = new boolean[5];
 
-		deck = new Deck(true, bJokers);
+		deck = new Deck(true, 20);
 		
 		for	(i = 0; i < 5; i++)
 		{								 
